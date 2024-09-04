@@ -345,4 +345,28 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Define the specific code you are looking for (auth token)
+  const specificCode = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw6b';
+  
+  fetch('https://backuppass.github.io/VintiAuth/')
+      .then(response => response.text())
+      .then(data => {
+
+          if (data.includes(specificCode)) {
+
+              document.getElementById('content').style.display = 'block';
+          } else {
+  
+              window.location.href = 'https://backuppass.github.io/Vinti-Update/';
+          }
+      })
+      .catch(error => {
+          console.error('Error fetching the URL:', error);
+
+      });
+});
+
+
+
 
