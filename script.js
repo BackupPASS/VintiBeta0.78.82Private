@@ -315,14 +315,34 @@ document.getElementById('close-popup').addEventListener('click', closePopup);
 
         
 
-// script.js
+
 document.addEventListener("DOMContentLoaded", function() {
-  // Set a timeout to hide the loading screen after 5 seconds
+
   setTimeout(function() {
     document.body.classList.add('loaded');
-  }, 2300); // 5 seconds delay
+  }, 2300); 
 });
 
+document.addEventListener('DOMContentLoaded', function() {
 
+  const specificCode = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+  
+  fetch('https://backuppass.github.io/Vinti1.00.00Auth/')
+      .then(response => response.text())
+      .then(data => {
+
+          if (data.includes(specificCode)) {
+
+              document.getElementById('content').style.display = 'block';
+          } else {
+ 
+              window.location.href = 'https://backuppass.github.io/Vinti-No-Server/';
+          }
+      })
+      .catch(error => {
+          console.error('Error fetching the URL:', error);
+
+      });
+});
 
 
